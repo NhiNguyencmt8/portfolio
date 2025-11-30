@@ -1,0 +1,569 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Misc - Leona (Nhi) Nguyen</title>
+    <meta name="author" content="Leona (Nhi) Nguyen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      body {
+        transition: background 0.4s ease, color 0.4s ease;
+        position: relative;
+        min-height: 100vh;
+        background: #faf9f7;
+        color: #2d2d2d;
+        font-size: 16px;
+        /* Crosshair cursor for all modes */
+        cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>') 12 12, crosshair;
+      }
+
+      /* Navigation Menu */
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e5e2dd;
+        margin-bottom: 8px;
+      }
+
+      .nav-link {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: #555;
+        text-decoration: none;
+        padding: 6px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        background: #f0eeea;
+        color: #2d2d2d;
+      }
+
+      .nav-link.active {
+        background: #c75146;
+        color: white;
+      }
+
+      .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .page-title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .section-title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 0;
+        color: white;
+      }
+
+      .section-title.misc-title { background: #c75146; }
+      .section-title.hobbies-title { background: #5a8f5a; }
+
+      .content-section {
+        margin-bottom: 40px;
+      }
+
+      .misc-list {
+        padding-left: 0;
+        list-style: none;
+        margin: 0;
+      }
+
+      .misc-list li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 16px;
+        background: #f8f7f5;
+        border-radius: 8px;
+        border: 1px solid #e5e2dd;
+      }
+
+      .misc-icon {
+        font-size: 24px;
+        min-width: 32px;
+      }
+
+      .misc-text {
+        flex: 1;
+        line-height: 1.6;
+      }
+
+      /* Hobbies section */
+      .hobbies-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .hobby-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 32px;
+        background: linear-gradient(135deg, #f8f7f5 0%, #f0eeea 100%);
+        border-radius: 12px;
+        border: 1px solid #e5e2dd;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s ease;
+        min-width: 120px;
+      }
+
+      .hobby-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      }
+
+      .hobby-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+
+      .hobby-label {
+        font-size: 15px;
+        font-weight: 600;
+        color: #2d2d2d;
+      }
+
+      .hobby-desc {
+        font-size: 12px;
+        color: #777;
+        margin-top: 4px;
+        text-align: center;
+      }
+
+      /* Hobby detail sections */
+      .hobby-section {
+        margin-top: 40px;
+        padding-top: 32px;
+        border-top: 1px solid #e5e2dd;
+        scroll-margin-top: 20px;
+      }
+
+      .hobby-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .hobby-header-icon {
+        font-size: 36px;
+      }
+
+      .hobby-header-title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .hobby-header-title.art { color: #c75146; }
+      .hobby-header-title.lego { color: #d4a03c; }
+      .hobby-header-title.kendo { color: #3d7ea6; }
+      .hobby-header-title.electronics { color: #5a8f5a; }
+
+      .hobby-description {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 20px;
+        max-width: 700px;
+      }
+
+      /* Gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .gallery-item {
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+        border: 2px dashed #c9c4bc;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8a857d;
+        font-size: 11px;
+        text-align: center;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Showcase Gallery */
+      .showcase-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .showcase-item {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .showcase-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+
+      .showcase-media {
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .showcase-media span {
+        font-size: 48px;
+        opacity: 0.6;
+      }
+
+      .showcase-media img,
+      .showcase-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .showcase-media iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .showcase-caption {
+        padding: 12px 14px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #555;
+        background: #faf9f7;
+        border-top: 1px solid #e8e4df;
+      }
+
+      /* Lightbulb toggle */
+      .creative-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #d4a574;
+        background: #fff8f0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+
+      .creative-toggle:hover {
+        background: #ffeddc;
+        transform: scale(1.1);
+      }
+
+      .lightbulb-icon {
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+
+      /* Lego container */
+      #lego-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .lego-piece {
+        position: absolute;
+        animation: fall-lego linear infinite;
+        opacity: 0.85;
+      }
+
+      @keyframes fall-lego {
+        0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+        5% { opacity: 0.85; }
+        95% { opacity: 0.85; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      }
+
+      /* Creative mode - DARK THEME */
+      body.creative-mode {
+        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
+        color: #e6edf3;
+      }
+
+      body.creative-mode #lego-container { opacity: 1; }
+      body.creative-mode a { color: #58a6ff; }
+      body.creative-mode a:hover { color: #79c0ff; }
+
+      body.creative-mode .nav-menu { border-bottom-color: #30363d; }
+      body.creative-mode .nav-link { color: #8b949e; }
+      body.creative-mode .nav-link:hover { background: #21262d; color: #e6edf3; }
+      body.creative-mode .nav-link.active { background: #da3633; color: white; }
+
+      body.creative-mode .section-title.misc-title { background: #da3633; }
+      body.creative-mode .section-title.hobbies-title { background: #238636; }
+
+      body.creative-mode .misc-list li {
+        background: #21262d;
+        border-color: #30363d;
+      }
+
+      body.creative-mode .misc-text { color: #8b949e; }
+
+      body.creative-mode .hobby-card {
+        background: linear-gradient(135deg, #21262d 0%, #30363d 100%);
+        border-color: #30363d;
+      }
+      body.creative-mode .hobby-card:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      }
+      body.creative-mode .hobby-label { color: #e6edf3; }
+      body.creative-mode .hobby-desc { color: #8b949e; }
+
+      body.creative-mode .hobby-section { border-top-color: #30363d; }
+      body.creative-mode .hobby-description { color: #8b949e; }
+
+      body.creative-mode .gallery-item {
+        background: linear-gradient(135deg, #21262d 0%, #30363d 100%);
+        border-color: #30363d;
+        color: #8b949e;
+      }
+
+      body.creative-mode .showcase-item {
+        background: #21262d;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      body.creative-mode .showcase-item:hover {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      }
+      body.creative-mode .showcase-media {
+        background: linear-gradient(135deg, #161b22 0%, #21262d 100%);
+      }
+      body.creative-mode .showcase-caption {
+        background: #161b22;
+        border-top-color: #30363d;
+        color: #8b949e;
+      }
+
+      body.creative-mode .creative-toggle {
+        background: #238636;
+        border-color: #2ea043;
+        box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
+      }
+      body.creative-mode .creative-toggle:hover {
+        background: #2ea043;
+        box-shadow: 0 0 30px rgba(46, 160, 67, 0.6);
+      }
+      body.creative-mode .lightbulb-icon {
+        filter: drop-shadow(0 0 8px #ffd700);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="lego-container"></div>
+
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">About</a>
+      <a href="resume.html" class="nav-link">Resume</a>
+      <a href="misc.html" class="nav-link active">Misc</a>
+      <button id="creative-toggle" class="creative-toggle" title="Toggle Creative Mode">
+        <span class="lightbulb-icon">💡</span>
+      </button>
+    </nav>
+
+    <div style="max-width:800px;margin:0 auto;padding:20px;">
+      
+      <div class="page-header">
+        <h1 class="page-title">Miscellaneous</h1>
+      </div>
+
+      <!-- Hobbies Section -->
+      <div class="content-section">
+        <div class="section-title hobbies-title">Hobbies</div>
+        <p style="margin-bottom: 16px; line-height: 1.7;">
+          Beyond the lab, I'm a creative roboticist who loves making electronics projects and digital art in my spare time. You'll probably find me spending hours for editing diagrams and project videos.
+          I'm also a passionate LEGO enthusiast, my favorite series are LEGO Creator and LEGO Technic. I do keep up to dated with the nobels in literature, my favorite authors are Kazuo Ishiguro.
+          To stay grounded and meet other people, I practice Kendo, which keeps me disciplined, calm, and connected to the community. Let me know if you share any of these hobbies!
+        </p>
+      </div>
+
+      <!-- Showcase Gallery Section -->
+      <div class="content-section">
+        <div class="showcase-gallery">
+          <!-- Digital Art -->
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <img src="images/misc/flappybird.png" alt="Flappy Bird Art">
+            </div>
+            <div class="showcase-caption">Flappy Bird made by cardboard and 2 DC motors</div>
+          </div>
+          
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <video src="images/misc/LightArt.mp4" autoplay muted loop></video>
+            </div>
+            <div class="showcase-caption">A Bare Glimpse of the World - Light Art</div>
+          </div>
+          
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <img src="images/misc/bananapiano.jpg" alt="Banana Piano">
+            </div>
+            <div class="showcase-caption">Forgot your piano ? Don't worry we have banana piano</div>
+          </div>
+
+          <!-- Electronics - YouTube Videos -->
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <iframe src="https://www.youtube.com/embed/RNqEnN_weHs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="showcase-caption">A Water Reminder System to remind you to stay hydrated</div>
+          </div>
+
+          <!-- LEGO -->
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <img src="images/misc/legocity.png" alt="LEGO City">
+            </div>
+            <div class="showcase-caption">LEGO City built in COVID19 era</div>
+          </div>
+          
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <img src="images/misc/legoland.jpg" alt="LEGOLAND">
+            </div>
+            <div class="showcase-caption">I finally visited the lengendary LEGOHouse!</div>
+          </div>
+
+          <!-- Kendo -->
+          <div class="showcase-item">
+            <div class="showcase-media">
+              <img src="images/misc/firstkendoshinai.jpg" alt="First Kendo Shinai">
+            </div>
+            <div class="showcase-caption">My first shinai (bamboo sword)!!</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      const toggleButton = document.getElementById('creative-toggle');
+      const lightbulbIcon = toggleButton.querySelector('.lightbulb-icon');
+      const legoContainer = document.getElementById('lego-container');
+
+      function createLegoPieces() {
+        legoContainer.innerHTML = '';
+        const colors = ['#d01012', '#f5cd2f', '#0055bf', '#237841', '#f57d20', '#923978', '#05a3d8', '#ffffff'];
+        
+        for (let i = 0; i < 30; i++) {
+          const lego = document.createElement('div');
+          lego.className = 'lego-piece';
+          
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          const left = Math.random() * 100;
+          const delay = Math.random() * 20;
+          const duration = Math.random() * 12 + 12;
+          const size = Math.random() * 20 + 20;
+          const studs = Math.random() > 0.5 ? 2 : 1;
+          
+          const svgBrick = `
+            <svg width="${size * studs * 0.6}" height="${size}" viewBox="0 0 ${20 * studs} 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="6" width="${20 * studs}" height="18" rx="1" fill="${color}" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+              <rect x="0" y="6" width="${20 * studs}" height="4" fill="rgba(255,255,255,0.15)"/>
+              ${Array.from({length: studs}, (_, s) => `<circle cx="${10 + s * 20}" cy="4" r="4" fill="${color}" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/><circle cx="${10 + s * 20}" cy="3" r="2" fill="rgba(255,255,255,0.3)"/>`).join('')}
+            </svg>
+          `;
+          
+          lego.innerHTML = svgBrick;
+          lego.style.cssText = `
+            left: ${left}%;
+            animation-delay: ${delay}s;
+            animation-duration: ${duration}s;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+          `;
+          
+          legoContainer.appendChild(lego);
+        }
+      }
+
+      createLegoPieces();
+
+      // Check for saved preference
+      if (localStorage.getItem('creative-mode') === 'true') {
+        document.body.classList.add('creative-mode');
+      }
+
+      toggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('creative-mode');
+        localStorage.setItem('creative-mode', document.body.classList.contains('creative-mode'));
+      });
+    </script>
+  </body>
+</html>

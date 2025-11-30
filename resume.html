@@ -1,0 +1,596 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Resume - Leona (Nhi) Nguyen</title>
+    <meta name="author" content="Leona (Nhi) Nguyen">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        font-family: 'Ubuntu', sans-serif;
+      }
+
+      body {
+        transition: background 0.4s ease, color 0.4s ease;
+        position: relative;
+        min-height: 100vh;
+        background: #faf9f7;
+        color: #2d2d2d;
+        font-size: 16px;
+        /* Crosshair cursor for all modes */
+        cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>') 12 12, crosshair;
+      }
+
+      /* Navigation Menu */
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        padding: 16px 0;
+        border-bottom: 1px solid #e5e2dd;
+        margin-bottom: 8px;
+      }
+
+      .nav-link {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: #555;
+        text-decoration: none;
+        padding: 6px 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        background: #f0eeea;
+        color: #2d2d2d;
+      }
+
+      .nav-link.active {
+        background: #d4a03c;
+        color: white;
+      }
+
+      .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+
+      .page-title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #3d7ea6;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .download-btn:hover {
+        background: #2a5a7a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(61, 126, 166, 0.3);
+      }
+
+      .section-title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 0;
+        color: white;
+      }
+
+      .section-title.education { background: #3d7ea6; }
+      .section-title.experience { background: #5a8f5a; }
+      .section-title.skills { background: #d4a03c; }
+      .section-title.publications { background: #c75146; }
+
+      .resume-section {
+        margin-bottom: 32px;
+      }
+
+      .resume-item {
+        padding: 16px 0;
+        border-bottom: 1px solid #e5e2dd;
+      }
+
+      .resume-item:last-child {
+        border-bottom: none;
+      }
+
+      .resume-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+
+      .resume-item-title {
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .resume-item-org {
+        color: #3d7ea6;
+        font-weight: 500;
+      }
+
+      .resume-item-date {
+        color: #777;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .resume-item-location {
+        color: #888;
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+
+      .resume-item-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      .resume-item-desc ul {
+        margin: 8px 0 0 0;
+        padding-left: 20px;
+      }
+
+      .resume-item-desc li {
+        margin-bottom: 4px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+      }
+
+      .skill-category {
+        background: #f8f7f5;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #e5e2dd;
+      }
+
+      .skill-category-title {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #2d2d2d;
+      }
+
+      .skill-list {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* Lightbulb toggle button */
+      .creative-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #d4a574;
+        background: #fff8f0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 100;
+      }
+
+      .creative-toggle:hover {
+        background: #ffeddc;
+        transform: scale(1.1);
+      }
+
+      .lightbulb-icon {
+        font-size: 20px;
+        transition: all 0.3s ease;
+      }
+
+      /* Lego container */
+      #lego-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .lego-piece {
+        position: absolute;
+        animation: fall-lego linear infinite;
+        opacity: 0.85;
+      }
+
+      @keyframes fall-lego {
+        0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+        5% { opacity: 0.85; }
+        95% { opacity: 0.85; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+      }
+
+      /* Creative mode - DARK THEME */
+      body.creative-mode {
+        background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
+        color: #e6edf3;
+      }
+
+      body.creative-mode #lego-container { opacity: 1; }
+      body.creative-mode a { color: #58a6ff; }
+      body.creative-mode a:hover { color: #79c0ff; }
+
+      body.creative-mode .nav-menu { border-bottom-color: #30363d; }
+      body.creative-mode .nav-link { color: #8b949e; }
+      body.creative-mode .nav-link:hover { background: #21262d; color: #e6edf3; }
+      body.creative-mode .nav-link.active { background: #d29922; color: white; }
+
+      body.creative-mode .section-title.education { background: #1f6feb; }
+      body.creative-mode .section-title.experience { background: #238636; }
+      body.creative-mode .section-title.skills { background: #d29922; }
+      body.creative-mode .section-title.publications { background: #da3633; }
+
+      body.creative-mode .resume-item { border-bottom-color: #30363d; }
+      body.creative-mode .resume-item-org { color: #58a6ff; }
+      body.creative-mode .resume-item-date { color: #8b949e; }
+      body.creative-mode .resume-item-location { color: #8b949e; }
+      body.creative-mode .resume-item-desc { color: #8b949e; }
+
+      body.creative-mode .skill-category {
+        background: #21262d;
+        border-color: #30363d;
+      }
+      body.creative-mode .skill-category-title { color: #e6edf3; }
+      body.creative-mode .skill-list { color: #8b949e; }
+
+      body.creative-mode .download-btn {
+        background: #238636;
+      }
+      body.creative-mode .download-btn:hover {
+        background: #2ea043;
+        box-shadow: 0 4px 12px rgba(46, 160, 67, 0.3);
+      }
+
+      body.creative-mode .creative-toggle {
+        background: #238636;
+        border-color: #2ea043;
+        box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
+      }
+      body.creative-mode .creative-toggle:hover {
+        background: #2ea043;
+        box-shadow: 0 0 30px rgba(46, 160, 67, 0.6);
+      }
+      body.creative-mode .lightbulb-icon {
+        filter: drop-shadow(0 0 8px #ffd700);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="lego-container"></div>
+
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">About</a>
+      <a href="resume.html" class="nav-link active">Resume</a>
+      <a href="misc.html" class="nav-link">Misc</a>
+      <button id="creative-toggle" class="creative-toggle" title="Toggle Creative Mode">
+        <span class="lightbulb-icon">💡</span>
+      </button>
+    </nav>
+
+    <div style="max-width:800px;margin:0 auto;padding:20px;">
+      
+      <div class="page-header">
+        <h1 class="page-title">Resume</h1>
+        <a href="data/LeonaNguyen-CV.pdf" class="download-btn" download>
+          📄 Download PDF
+        </a>
+      </div>
+
+      <!-- Name and Contact -->
+      <div style="margin-bottom:24px;">
+        <div style="font-size:24px;font-weight:600;font-family:'Josefin Sans',sans-serif;">Leona (Nhi) Nguyen</div>
+        <div style="color:#666;margin-top:4px;">
+          <a href="mailto:nnguyen349@gatech.edu">nnguyen349@gatech.edu</a>
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="resume-section">
+        <div class="section-title education">Education</div>
+        
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">M.S. in Robotics</div>
+              <div class="resume-item-org">Georgia Institute of Technology</div>
+            </div>
+            <div class="resume-item-date">2024 – Present</div>
+          </div>
+          <div class="resume-item-location">Atlanta, GA</div>
+          <div class="resume-item-desc">
+            GPA: 4.0<br>
+            Selected Coursework: Deep Reinforcement Learning, Interactive Robot Learning, Human-Robot Interaction, Computer Vision
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">B.S. in Robotics Engineering & Computer Science</div>
+              <div class="resume-item-org">Worcester Polytechnic Institute</div>
+            </div>
+            <div class="resume-item-date">2020 – 2024</div>
+          </div>
+          <div class="resume-item-location">Worcester, MA</div>
+          <div class="resume-item-desc">
+            GPA: 3.94
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="resume-section">
+        <div class="section-title experience">Experience</div>
+        
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">Research Intern</div>
+              <div class="resume-item-org">AI for Social Good Lab – New Jersey Institute of Technology</div>
+            </div>
+            <div class="resume-item-date">May 2025 – Aug 2025</div>
+          </div>
+          <div class="resume-item-location">Newark, NJ</div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">Robotics Software Quality Engineer Co-op</div>
+              <div class="resume-item-org">SIEMENS – Corindus Vascular Robotics</div>
+            </div>
+            <div class="resume-item-date">May 2022 – Aug 2022</div>
+          </div>
+          <div class="resume-item-location">Newton, MA</div>
+          <div class="resume-item-desc">
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">Student Worker</div>
+              <div class="resume-item-org">WPI - Global Lab</div>
+            </div>
+            <div class="resume-item-date">Dec 2021 – May 2024</div>
+          </div>
+          <div class="resume-item-location">Worcester, MA</div>
+          <div class="resume-item-desc">
+            <ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teaching Experience Section -->
+      <div class="resume-section">
+        <div class="section-title experience">Teaching Experience</div>
+        
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">Graduate Teaching Assistant</div>
+              <div class="resume-item-org">School of Interactive Computing - Georgia Institute of Technology</div>
+            </div>
+            <div class="resume-item-date">Jan 2025 – Present</div>
+          </div>
+          <div class="resume-item-location">Atlanta, GA</div>
+          <div class="resume-item-desc">
+            <ul>
+              <li>Grading and creating projects' code, hold office hours and answer students' questions for CS 3630: Introduction to Robotics and Perception</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">Robotics Student Assistant</div>
+              <div class="resume-item-org">Worcester Polytechnic Institute - Robotics Engineering Department</div>
+            </div>
+            <div class="resume-item-date">Mar 2023 – May 2024</div>
+          </div>
+          <div class="resume-item-location">Worcester, MA</div>
+          <div class="resume-item-desc">
+            <ul>
+              <li>Assist students in course materials, including sensor performance, power transmission, static force analysis and robotic applications</li>
+              <li>Held lab sessions and office hours for hands-on exercises, projects, and homework questions</li>
+              <li>Coaching teams for project guidance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-header">
+            <div>
+              <div class="resume-item-title">Teaching Assistant</div>
+              <div class="resume-item-org">Worcester Polytechnic Institute - Computer Science Department</div>
+            </div>
+            <div class="resume-item-date">May 2023 – Aug 2023</div>
+          </div>
+          <div class="resume-item-location">Worcester, MA</div>
+          <div class="resume-item-desc">
+            <ul>
+              <li>Grading homework projects and exams, tutoring, and helping students render 3-D graphics pipelines, including clipping, projection, arbitrary viewing, hidden surface removal, and shading for course CS543 - Computer Graphics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awards Section -->
+      <div class="resume-section">
+        <div class="section-title skills">Awards & Honors</div>
+        
+        <div class="resume-item">
+          <div class="resume-item-desc">
+            <ul>
+              <li><strong>WPI Dean's List Student</strong> – 2020 - 2024</li>
+              <li><strong>Outstanding Junior Award</strong> – Robotics Engineering Department, WPI</li>
+              <li><strong>First Place - SheCode Hackathon HCMC 2020</strong> – Grammar identification and reading recommendation engine using Machine Learning and NodeJS</li>
+              <li><strong>Gold Medal - World Robot Olympiad Vietnam National</strong> – Smart meeting room system</li>
+              <li><strong>Silver Medal - World Robot Olympiad Vietnam National</strong> – Aquaponics system with Pistia stratiotes and robot hand manipulation</li>
+              <li><strong>Upsilon Pi Epsilon</strong> – Computer Science Honor Society</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activities Section -->
+      <div class="resume-section">
+        <div class="section-title publications">Activities</div>
+        
+        <div class="resume-item">
+          <div class="resume-item-desc">
+            <ul>
+              <li>🤖 <strong>Women VP</strong> – Georgia Tech Robograds</li>
+              <li>🎓 <strong>BridgeUp 2025 Mentor</strong></li>
+              <li>⚔️ <strong>Social Media Executive</strong> – Georgia Tech Kendo Club</li>
+              <li>🔧 <strong>Member</strong> – WPI Combat Robotics</li>
+              <li>🥋 <strong>Member</strong> – WPI Martial Arts Society SOMA</li>
+              <li>📡 <strong>Member</strong> – IoT Robotics HCMUS</li>
+              <li>💻 <strong>Trainee</strong> – Intel Female Engineer Training Program</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="resume-section">
+        <div class="section-title skills">Skills</div>
+        
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-category-title">Programming</div>
+            <div class="skill-list">Python, C++, MATLAB, JavaScript</div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-title">ML/AI Frameworks</div>
+            <div class="skill-list">PyTorch, TensorFlow, JAX</div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-title">Robotics</div>
+            <div class="skill-list">ROS/ROS2, MoveIt, Isaac Sim</div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-title">Tools</div>
+            <div class="skill-list">Git, Docker, Linux, LaTeX</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Research Section -->
+      <div class="resume-section">
+        <div class="section-title publications">Research & Projects</div>
+        
+        <div class="resume-item">
+          <div class="resume-item-desc">
+            Research and projects can be seen in the main page. <a href="index.html" style="font-weight:500;">See more →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      const toggleButton = document.getElementById('creative-toggle');
+      const lightbulbIcon = toggleButton.querySelector('.lightbulb-icon');
+      const legoContainer = document.getElementById('lego-container');
+
+      function createLegoPieces() {
+        legoContainer.innerHTML = '';
+        const colors = ['#d01012', '#f5cd2f', '#0055bf', '#237841', '#f57d20', '#923978', '#05a3d8', '#ffffff'];
+        
+        for (let i = 0; i < 30; i++) {
+          const lego = document.createElement('div');
+          lego.className = 'lego-piece';
+          
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          const left = Math.random() * 100;
+          const delay = Math.random() * 20;
+          const duration = Math.random() * 12 + 12;
+          const size = Math.random() * 20 + 20;
+          const studs = Math.random() > 0.5 ? 2 : 1;
+          
+          const svgBrick = `
+            <svg width="${size * studs * 0.6}" height="${size}" viewBox="0 0 ${20 * studs} 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="6" width="${20 * studs}" height="18" rx="1" fill="${color}" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+              <rect x="0" y="6" width="${20 * studs}" height="4" fill="rgba(255,255,255,0.15)"/>
+              ${Array.from({length: studs}, (_, s) => `<circle cx="${10 + s * 20}" cy="4" r="4" fill="${color}" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/><circle cx="${10 + s * 20}" cy="3" r="2" fill="rgba(255,255,255,0.3)"/>`).join('')}
+            </svg>
+          `;
+          
+          lego.innerHTML = svgBrick;
+          lego.style.cssText = `
+            left: ${left}%;
+            animation-delay: ${delay}s;
+            animation-duration: ${duration}s;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+          `;
+          
+          legoContainer.appendChild(lego);
+        }
+      }
+
+      createLegoPieces();
+
+      // Check for saved preference
+      if (localStorage.getItem('creative-mode') === 'true') {
+        document.body.classList.add('creative-mode');
+      }
+
+      toggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('creative-mode');
+        localStorage.setItem('creative-mode', document.body.classList.contains('creative-mode'));
+      });
+    </script>
+  </body>
+</html>
